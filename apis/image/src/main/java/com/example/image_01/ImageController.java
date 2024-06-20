@@ -25,7 +25,7 @@ public class ImageController {
     ImageResponse response =
         imageModel.call(
             new ImagePrompt(
-                "A light cream colored mini golden doodle",
+                "A light cream colored cavapoo",
                 OpenAiImageOptions.builder()
                     .withQuality("hd")
                     .withN(1)

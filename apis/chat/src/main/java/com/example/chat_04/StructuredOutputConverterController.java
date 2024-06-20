@@ -41,6 +41,23 @@ public class StructuredOutputConverterController {
         .content();
   }
 
+  @GetMapping("/books")
+  public String getBooks(@RequestParam(value = "author", defaultValue = "Hemingway") String topic) {
+
+    return chatClient
+        .prompt()
+        .user(
+            u ->
+                u.text(
+                        """
+                Provide a list of the books written by {author}.
+                Provide only the list no other commentary.
+                """)
+                    .param("author", topic))
+        .call()
+        .content();
+  }
+
   @GetMapping("/plays/list")
   public List<String> getPlaysList(
       @RequestParam(value = "author", defaultValue = "Shakespeare") String topic) {

@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: # spy,pgvector
+    active: pgvector # spy,pgvector
   ai:
     ollama:
       base-url: "http://localhost:11434/"
